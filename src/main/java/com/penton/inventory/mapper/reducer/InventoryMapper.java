@@ -32,7 +32,7 @@ public class InventoryMapper extends MapReduceBase implements Mapper<LongWritabl
         while (fieldValues.hasMoreTokens()) {
             if (count == 0) {
                 final String fieldValue = fieldValues.nextToken();
-                if (fieldValue.length() >= 3 && fieldValue.matches("[A-Za-z0-9]+") && fieldValue.contains("-")) {
+                if (fieldValue.length() >= 3 && fieldValue.matches("^.*[A-Za-z0-9]+.*$") && fieldValue.contains("-")) {
                     outputKey.set(fieldValue);
                 } else {
                     break;

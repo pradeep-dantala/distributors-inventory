@@ -38,6 +38,7 @@ public class InventoryReducer extends MapReduceBase implements Reducer<Text, Tex
         }
 
         outputKey.set(key);
+        collector.collect(outputKey, outputValue);
 
     }
 
